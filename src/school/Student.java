@@ -7,32 +7,34 @@ import java.util.Objects;
 /**
  * A class representing a student.
  */
-public class Student {
+public class Student implements Nameable, HasLevel{
 
     // Instance variables
     String name;
     String ID;
     List<Double> gradeList;
+    private Level studentLevel;
 
     // Constructor
 
-    public Student(String name, String ID, List<Double> grades) {
+    public Student(String name, String ID, List<Double> grades, Level studentLevel) {
         this.name = name;
         this.ID = ID;
         this.gradeList = grades;
+        this.studentLevel = studentLevel;
     }
 
-    public Student(String name, String ID) {
+    public Student(String name, String ID, Level studentLevel) {
         this.name = name;
         this.ID = ID;
+        this.studentLevel = studentLevel;
         this.gradeList = new ArrayList<>();
     }
 
     // Getters and setters
 
-    public String getName() {
-        return name;
-    }
+
+
 
     public void setName(String name) {
         this.name = name;
@@ -58,6 +60,10 @@ public class Student {
     // Unique methods
 
     // TODO: Create method to add new grades
+
+    public void addGrade(double newGrade){
+        gradeList.add(newGrade);
+    }
 
     /**
      * Function to calculate the average grade of a student.
@@ -108,5 +114,15 @@ public class Student {
                 ", ID='" + ID + '\'' +
                 ", grades=" + gradeList +
                 '}';
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public Level getLevel() {
+        return studentLevel;
     }
 }

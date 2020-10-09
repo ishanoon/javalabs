@@ -23,7 +23,7 @@ class LectureTest {
     @Test
     void enter() {
         //init testStudent
-        Student testStudent= new Student("test","test");
+        Student testStudent= new Student("test","test",  Level.LEVEL1);
 
         //putting our testStudent into the testLecture object list
         testLecture.enter(testStudent);
@@ -37,9 +37,9 @@ class LectureTest {
 
 
         // create 3 three new students (ts1, ts2, ts3)
-        Student ts1 = new Student("TS1", "test1");
-        Student ts2 = new Student("TS2", "test2");
-        Student ts3 = new Student("TS3", "test3");
+        Student ts1 = new Student("TS1", "test1",  Level.LEVEL1);
+        Student ts2 = new Student("TS2", "test2",  Level.LEVEL1);
+        Student ts3 = new Student("TS3", "test3",  Level.LEVEL1);
 
 
         // add new grades to each test student
@@ -65,6 +65,25 @@ class LectureTest {
 
         // assert that the highest average grade == 20
         assertEquals(20,testLecture.getHighestAverageGrade());
+
+    }
+
+    @Test
+    void testNaughtyStudentGradeIsHigherThanShouldBe() {
+        Student ts1 = new Student("TS1", "test1", Level.LEVEL1);
+        NaughtyStudent ts2 = new NaughtyStudent("TS2", "test2", Level.LEVEL1);
+
+        ts1.addGrade(10);
+        ts1.addGrade(10);
+
+        ts2.addGrade(10);
+        ts2.addGrade(10);
+
+        testLecture.enter(ts1);
+        testLecture.enter(ts2);
+
+        assertEquals(11,testLecture.getHighestAverageGrade());
+
 
     }
 }

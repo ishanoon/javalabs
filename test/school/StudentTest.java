@@ -14,7 +14,7 @@ class StudentTest {
 
     @BeforeEach
     void setUp() {
-        testStudent = new Student("Test", "testID");
+        testStudent = new Student("Test", "testID", Level.LEVEL1);
     }
 
     @Test
