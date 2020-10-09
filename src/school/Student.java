@@ -57,6 +57,8 @@ public class Student {
 
     // Unique methods
 
+    // TODO: Create method to add new grades
+
     /**
      * Function to calculate the average grade of a student.
      * @return The average score of the student.
@@ -65,7 +67,6 @@ public class Student {
 
         double avg = 0.0;
 
-        // TODO: write code to calculate avg
         if (gradeList.size() == 0) {
             avg = 0.0;
 //            return 0.0;
