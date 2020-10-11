@@ -1,8 +1,6 @@
 package school;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Register {
 
@@ -19,6 +17,8 @@ public class Register {
     public Register() {
         this.registerList = new ArrayList<>();
     }
+
+//    public Register(List<Student> students){ }
 
     //getters and setters
 
@@ -52,6 +52,13 @@ public class Register {
 
     }
 
+//    public Map<Level, List<Student>> getRegisterByLevel(Level studentLevel, Student students){
+//        Map<Level, List<Student>> listOfStudentNames = new HashMap<Level, List<Student>>();
+//
+//        return listOfStudentNames ;
+//
+//    }
+
 
     public String printReport(){
         List<String> listOfStudentInFirstYear = new ArrayList<>();
@@ -77,6 +84,13 @@ public class Register {
             "List of third years: " + listOfStudentInThirdYear.toString() + "\n" ;
 
     }
+
+//    public List<Student> sort(Comparator<Student> studentComparator){
+//        List<Student> studentList = new ArrayList<>();
+////        studentComparator.reversed(studentList);
+//
+//        return studentList;
+//    }
 
     //utility methods
 
